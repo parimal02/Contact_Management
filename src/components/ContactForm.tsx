@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact, updateContact } from '../store/contactSlice';
 import { v4 as uuidv4 } from 'uuid';
@@ -45,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentContact, onUpdate }) =
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
         <input
@@ -53,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentContact, onUpdate }) =
           id="firstName"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm p-2"
+          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2"
         />
       </div>
       <div>
@@ -63,7 +63,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentContact, onUpdate }) =
           id="lastName"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm p-2"
+          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-2"
         />
       </div>
       <div>
@@ -76,7 +76,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentContact, onUpdate }) =
               value="active"
               checked={status === 'active'}
               onChange={() => setStatus('active')}
-              className="form-radio"
+              className="form-radio text-indigo-600"
             />
             <span className="ml-2">Active</span>
           </label>
@@ -87,13 +87,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ currentContact, onUpdate }) =
               value="inactive"
               checked={status === 'inactive'}
               onChange={() => setStatus('inactive')}
-              className="form-radio"
+              className="form-radio text-indigo-600"
             />
             <span className="ml-2">Inactive</span>
           </label>
         </div>
       </div>
-      <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+      <button type="submit" className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-200">
         {currentContact ? 'Update Contact' : 'Save Contact'}
       </button>
     </form>

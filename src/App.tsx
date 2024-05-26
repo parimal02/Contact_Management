@@ -14,7 +14,7 @@ const App: React.FC = () => {
           <Sidebar />
           <div className="flex-1 p-8 ml-64">
             <Routes>
-              <Route path="/" element={<Contacts />} />
+              <Route path="/Contact_Management" element={<Contacts />} />
               <Route path="/contact" element={<Contacts />} />
               <Route path="/charts-and-maps" element={<Charts />} />
             </Routes>
